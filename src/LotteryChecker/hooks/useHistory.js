@@ -8,7 +8,6 @@ export const useHistory = ({loadMore}) => {
     const queryDate = new Date(new Date().getTime() - 86400000 * 90 * loadMore)
       .toISOString()
       .split("T")[0];
-    console.log("_queryDate", queryDate);
     var config = {
       method: "get",
       url: `https://www.thairath.co.th/api-lottery/history?date=${queryDate}`,
@@ -17,9 +16,7 @@ export const useHistory = ({loadMore}) => {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data.data);
         const _history = [...history, ...response.data.data];
-        console.log("_history", _history);
         setHistory(_history);
       })
       .catch(function (error) {
