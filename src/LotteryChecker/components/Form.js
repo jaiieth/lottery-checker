@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 
 export const Form = ({ setCheckClicked, setQueryNumbers, checkClicked }) => {
   return (
-    <div className="bg-gradient-to-b w-11/12 md:w-1/3 rounded-md from-slate-200 to-slate-50 p-5 ">
+    <div className="bg-gradient-to-b w-11/12 md:w-2/3 lg:w-1/3 rounded-md from-slate-200  p-5 ">
       <p className="text-lg">กรอกเลข </p>
       <form
         onSubmit={(e) => {
@@ -33,6 +33,7 @@ export const Form = ({ setCheckClicked, setQueryNumbers, checkClicked }) => {
           </button>
           <button
             type="reset"
+            onClick={()=>{setQueryNumbers([])}}
             className="flex h-10 w-1/2 items-center justify-center rounded-md 
             bg-gray-400 shadow-lg shadow-slate-300
             duration-300 hover:bg-gray-500 active:bg-slate-400"
