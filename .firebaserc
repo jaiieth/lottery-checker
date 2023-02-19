@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "lottothaicheck"
+  },
+  "targets": {
+    "lottothaicheck": {
+      "hosting": {
+        "lottothaicheck": [
+          "lottothaicheck"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

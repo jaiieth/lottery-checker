@@ -28,9 +28,13 @@ const AppLotteryChecker = () => {
         </button>
       )}
       {page === 1 && <History setPage={setPage} page={page} />}
-      {prizes.length > 1 && page === 0 && (
+      {page === 0 && (
         <div className="flex flex-col items-center justify-center font-kanit">
-          <img className="mt-7 h-28" src="./lotteryLogo.png" alt="" />
+          <img
+            className="mt-7 h-28"
+            src="./lotteryLogo-PhotoRoom.png-PhotoRoom.png"
+            alt=""
+          />
           <p className="my-4 text-xl font-bold">
             ตรวจผลลอตเตอรี่ By กองสลากไมนัส
           </p>
@@ -44,15 +48,17 @@ const AppLotteryChecker = () => {
             result={result}
             sumResult={sumResult}
           />
-          <AllResult
-            lotteryDateTitle={lotteryDateTitle}
-            prizes={prizes}
-            page={page}
-            setPage={setPage}
-          />
+          {prizes.length > 1 && (
+            <AllResult
+              lotteryDateTitle={lotteryDateTitle}
+              prizes={prizes}
+              page={page}
+              setPage={setPage}
+            />
+          )}
         </div>
       )}
-      {prizes.length > 1 && page !== 0 && page !== 1 && (
+      {page !== 0 && page !== 1 && (
         <div className="flex flex-col items-center justify-center font-kanit">
           <img className="mt-7 h-28" src="./lotteryLogo.png" alt="" />
           <p className="my-4 text-xl font-bold">
@@ -68,12 +74,14 @@ const AppLotteryChecker = () => {
             result={result}
             sumResult={sumResult}
           />
-          <AllResult
-            lotteryDateTitle={lotteryDateTitle}
-            prizes={prizes}
-            page={page}
-            setPage={setPage}
-          />
+          {prizes.length > 1 && (
+            <AllResult
+              lotteryDateTitle={lotteryDateTitle}
+              prizes={prizes}
+              page={page}
+              setPage={setPage}
+            />
+          )}
         </div>
       )}
     </>
